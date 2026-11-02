@@ -5,6 +5,11 @@ Site de página única para a **AMEVET Clínica Veterinária e Estética Animal*
 
 React 19 · TypeScript · Tailwind CSS · Vite.
 
+- **No ar (provisório):** https://amevet-site.vercel.app
+- **Repositório:** https://github.com/1agoRP/amevet-site (privado)
+
+Todo push na branch `main` republica o site automaticamente na Vercel.
+
 ---
 
 ## Rodando o projeto
@@ -113,9 +118,10 @@ Ao trocar uma foto, revise também o texto `alt` correspondente em
 
 ## Antes de colocar no ar
 
-- [ ] Trocar `https://www.amevet.com.br` pelo domínio real em `index.html`
-      (`canonical`, `og:url`, `og:image`, `twitter:image` e o bloco JSON-LD) e em
-      `public/robots.txt` / `public/sitemap.xml`.
+- [ ] Trocar `https://amevet-site.vercel.app` (endereço provisório) pelo domínio
+      real em `index.html` (`canonical`, `og:url`, `og:image`, `twitter:image` e
+      o bloco JSON-LD) e em `public/robots.txt` / `public/sitemap.xml`.
+- [ ] Apontar o domínio definitivo para o projeto na Vercel.
 - [ ] Confirmar os horários e ligar `HORARIOS.confirmado`.
 - [ ] Confirmar o número do WhatsApp.
 - [ ] Substituir as fotos de banco pelas fotos reais da clínica.
