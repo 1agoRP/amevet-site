@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-white font-corpo text-carvao-suave antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-titulo font-semibold text-carvao;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-turquesa ring-offset-2 ring-offset-white;
+  }
+
+  ::selection {
+    @apply bg-vermelho/15 text-carvao;
+  }
+}
+
+@layer components {
+  /* Título de seção: olho-mágico + headline + apoio */
+  .titulo-secao {
+    @apply font-titulo text-3xl font-semibold leading-[1.15] tracking-[-.02em] text-carvao sm:text-4xl lg:text-[2.75rem];
+  }
+
+  .olho-magico {
+    @apply inline-flex items-center gap-2 rounded-full bg-turquesa-claro px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[.14em] text-turquesa-escuro;
+  }
+
+  .apoio-secao {
+    @apply max-w-leitura text-base leading-relaxed text-carvao-suave sm:text-[1.0625rem];
+  }
+
+  /* Revelação on-scroll — o estado inicial só é aplicado quando o JS assume */
+  .revelar {
+    @apply opacity-100;
+  }
+
+  .js .revelar {
+    @apply translate-y-6 opacity-0;
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .js .revelar[data-visivel='true'] {
+    @apply translate-y-0 opacity-100;
+  }
+}
