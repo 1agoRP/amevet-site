@@ -1,4 +1,4 @@
-import { CLINICA, HORARIOS, MENSAGENS, MENU, SERVICOS, linkWhatsapp } from '../dados/clinica';
+import { ASSINATURA, CLINICA, HORARIOS, MENSAGENS, MENU, SERVICOS, linkWhatsapp } from '../dados/clinica';
 import Icone from './ui/Icone';
 
 /** Ano da publicação — fixado fora do render para não variar entre renderizações. */
@@ -132,7 +132,15 @@ export default function Rodape() {
             © {ANO} {CLINICA.nomeCompleto}. Todos os direitos reservados.
           </p>
           <p>
-            {CLINICA.endereco.bairro} · {CLINICA.endereco.cidade}/{CLINICA.endereco.uf}
+            Site por{' '}
+            <a
+              href={ASSINATURA.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-white/85 underline decoration-white/25 underline-offset-4 transition-colors hover:text-white hover:decoration-white/60"
+            >
+              {ASSINATURA.nome}
+            </a>
           </p>
         </div>
       </div>
